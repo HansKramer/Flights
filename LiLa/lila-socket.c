@@ -22,6 +22,9 @@ limitations under the License.
 #include <stdlib.h>
 #include <string.h>
 
+#include <netinet/in.h>
+#include <arpa/inet.h>
+
 #include "include/dart_api.h"
 
 
@@ -126,7 +129,7 @@ bool is_instance(Dart_Handle instance, const char *name)
     Dart_Handle name_handle = Dart_NewStringFromCString(name);
      
     bool success;
-//    Dart_ObjectEquals(sockaddr_in, Dart_ToString(dart_argument), &success);
+    Dart_ObjectEquals(sockaddr_in, Dart_ToString(dart_argument), &success);
 
     return success;
 }
@@ -137,12 +140,13 @@ void lila_inet_aton(Dart_NativeArguments arguments)
     Dart_EnterScope();
 
     if (is_instance(Dart_GetNativeArgument(arguments, 0), "Instance of 'in_addr'")) {
-        Dart_GetNativeStringArgument(arguments, 0, &value);
+        char *value;
+        Dart_GetNativeStringArgument(arguments, 0, (void **) &value);
     } else
        printf("error\n");
 
-
-    inet_aton("63.161.169.137", &myaddr.sin_addr.s_addr);
+    struct in_addr myaddr;
+    inet_aton("63.161.169.137", &myaddr);
 
     Dart_ExitScope();
 }
