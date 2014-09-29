@@ -5,4 +5,4 @@ author: Hans Kramer
 homepage: https://github.com/HansKramer/Flights.git
 dependencies:
   DynamicClassInstance:
-    path:  /root/src/dart/DynamicClassInstance
+    path:  ../DynamicClassInstance
