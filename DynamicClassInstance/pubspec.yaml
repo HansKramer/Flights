@@ -1,0 +1,5 @@
+name: DynamicClassInstance
+version: 0.0.1
+description: Dynamically (after compiling) creating a class instance by specifying its name
+author: Hans Kramer
+homepage: https://github.com/HansKramer/Flights.git

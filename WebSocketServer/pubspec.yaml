@@ -1,0 +1,8 @@
+name: WebSocketServer
+version: 0.0.1
+description: Websocket server
+author: Hans Kramer
+homepage: https://github.com/HansKramer/Flights.git
+dependencies:
+  DynamicClassInstance:
+    path:  /root/src/dart/DynamicClassInstance

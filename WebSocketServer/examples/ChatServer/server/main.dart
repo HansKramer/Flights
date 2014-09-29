@@ -8,7 +8,8 @@
  */
 
 
-import "WebSocketServer.dart";
+import "package:WebSocketServer/WebSocketServer.dart";
+
 import "ChatServer.dart";
 
 
